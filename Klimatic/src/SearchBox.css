@@ -1,0 +1,48 @@
+
+
+.SearchBox {
+    width: 400px;
+    margin: auto;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    
+  }
+  
+  .SearchBox h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #0d47a1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  .SearchBox form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .MuiTextField-root {
+    width: 100%;
+  }
+  
+  .MuiButton-root {
+    width: 100%;
+    background-color: #1565c0;
+    font-weight: 600;
+    padding: 10px 0;
+    border-radius: 8px;
+    text-transform: capitalize;
+    transition: background-color 0.3s ease;
+  }
+  
+  .MuiButton-root:hover {
+    background-color: #0d47a1;
+  }
+  
