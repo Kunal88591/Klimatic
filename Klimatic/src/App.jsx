@@ -1,17 +1,14 @@
+import "./index.css";
+import "./App.css";
+import WeatherApp from "./WeatherApp";
 
-
-
-import Searchbox from './SearchBox'
 
 function App() {
-  
-
   return (
-    <>
-      <Searchbox/>
-  
-    </>
+    <div className="WeatherAppContainer">
+      <WeatherApp />
+    </div>
   )
 }
 
-export default App
+export default App;

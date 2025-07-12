@@ -1,0 +1,59 @@
+/* InfoBox.css */
+
+.MuiCard-root {
+    background-color: #f5f5f5 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+    padding: 20px !important;
+    margin-bottom: 40px;
+  }
+  
+  .MuiTypography-h5 {
+    font-weight: 700;
+    color: #0d47a1;
+  }
+  
+  .MuiTypography-subtitle2 {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1565c0;
+  }
+  
+  .MuiTypography-body2 {
+    font-size: 13px;
+    color: #666;
+    margin-top: -4px;
+  }
+  
+  .MuiGrid-root {
+    margin-top: 10px;
+  }
+  
+  .MuiGrid-item {
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .MuiDivider-root {
+    margin: 20px 0 !important;
+    background-color: #bdbdbd;
+  }
+  
+  @media (max-width: 600px) {
+    .MuiCard-root {
+      padding: 16px !important;
+    }
+  
+    .MuiTypography-h5 {
+      font-size: 18px;
+    }
+  
+    .MuiTypography-subtitle2 {
+      font-size: 14px;
+    }
+  
+    .MuiGrid-item {
+      padding: 8px;
+    }
+  }
+  

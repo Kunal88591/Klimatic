@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right top, #dfe9f3, #ffffff);
+    color: #333;
+  }
+  
+  .weather-app-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+    background: linear-gradient(to right top, #e0f7fa, #fefefe);
+  }
+  
+  .weather-app-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    padding: 30px 25px;
+    text-align: center;
+  }
+  
+  .app-title {
+    font-size: 2.2rem;
+    color: #0d47a1;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+  
+  .welcome-message {
+    margin-top: 30px;
+    color: #444;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .weather-icon {
+    font-size: 48px;
+    margin-top: 15px;
+  }
+  
+  .status-message {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .loading-indicator {
+    background-color: #fffde7;
+    color: #f9a825;
+    border: 1px solid #f9a825;
+  }
+  
+  .error-message {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+  }
+  
+  @media (max-width: 600px) {
+    .weather-app-container {
+      padding: 20px 15px;
+    }
+  
+    .app-title {
+      font-size: 1.8rem;
+    }
+  
+    .status-message {
+      font-size: 0.95rem;
+    }
+  
+    .welcome-message {
+      font-size: 1rem;
+    }
+  }
+  
