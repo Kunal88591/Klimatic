@@ -1,14 +1,13 @@
-import "./index.css";
-import "./App.css";
-import WeatherApp from "./WeatherApp";
-
+import './index.css';
+import './App.css';
+import WeatherApp from './WeatherApp';
 
 function App() {
   return (
-    <div className="WeatherAppContainer">
+    <main className="app-container">
       <WeatherApp />
-    </div>
-  )
+    </main>
+  );
 }
 
 export default App;

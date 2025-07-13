@@ -1,89 +1,121 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body, html {
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right top, #dfe9f3, #ffffff);
-    color: #333;
-  }
-  
-  .weather-app-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    min-height: 100vh;
-    background: linear-gradient(to right top, #e0f7fa, #fefefe);
-  }
-  
+.weather-app-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4vh 5vw;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #dff6ff 0%, #ffffff 100%);
+  background-attachment: fixed;
+  font-family: 'Poppins', sans-serif;
+}
+
+.weather-app-container {
+  width: 100%;
+  max-width: 580px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 26px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-app-container::before,
+.weather-app-container::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #007aff;
+  border-radius: 50%;
+  opacity: 0.06;
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.weather-app-container::before {
+  top: -80px;
+  left: -80px;
+}
+
+.weather-app-container::after {
+  bottom: -80px;
+  right: -80px;
+}
+
+.weather-app-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.15);
+}
+
+.app-title {
+  font-size: clamp(2rem, 2.8vw, 2.6rem);
+  font-weight: 700;
+  color: #0051a8;
+  margin-bottom: 1.8rem;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-message {
+  margin-top: 2.2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #444;
+  position: relative;
+  z-index: 1;
+}
+
+.weather-icon {
+  font-size: clamp(2.5rem, 6vw, 3.8rem);
+  margin-top: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.status-message {
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 500;
+  padding: 1rem 1.2rem;
+  border-radius: 14px;
+  display: inline-block;
+  max-width: 90%;
+  line-height: 1.6;
+  word-break: break-word;
+  transition: background 0.3s ease, transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.status-message.loading {
+  background-color: #fffde7;
+  color: #f9a825;
+  border: 1px solid #f9a825;
+}
+
+.status-message.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #c62828;
+}
+
+@media (max-width: 600px) {
   .weather-app-container {
-    width: 100%;
-    max-width: 500px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    padding: 30px 25px;
-    text-align: center;
+    padding: 2.4rem 1.8rem;
+    border-radius: 20px;
   }
-  
-  .app-title {
-    font-size: 2.2rem;
-    color: #0d47a1;
-    margin-bottom: 25px;
-    font-weight: 700;
-  }
-  
-  .welcome-message {
-    margin-top: 30px;
-    color: #444;
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  
-  .weather-icon {
-    font-size: 48px;
-    margin-top: 15px;
-  }
-  
+
   .status-message {
-    margin-top: 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
   }
-  
-  .loading-indicator {
-    background-color: #fffde7;
-    color: #f9a825;
-    border: 1px solid #f9a825;
+
+  .weather-icon {
+    margin-top: 0.6rem;
   }
-  
-  .error-message {
-    background-color: #ffebee;
-    color: #d32f2f;
-    border: 1px solid #d32f2f;
-  }
-  
-  @media (max-width: 600px) {
-    .weather-app-container {
-      padding: 20px 15px;
-    }
-  
-    .app-title {
-      font-size: 1.8rem;
-    }
-  
-    .status-message {
-      font-size: 0.95rem;
-    }
-  
-    .welcome-message {
-      font-size: 1rem;
-    }
-  }
-  
+}
