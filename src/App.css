@@ -74,6 +74,11 @@ root {
 }
 
 @media (max-width: 480px) {
+
+  #root{
+    padding: 0rem 0rem;
+  }
+  
   .app-container {
     padding: 0rem 0rem;
     border-radius: 16px;
