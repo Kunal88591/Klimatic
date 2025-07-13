@@ -1,49 +1,158 @@
-.SearchBox {
+.search-box {
   width: 100%;
-  max-width: 480px;
-  margin: auto;
-  padding: 40px 30px;
-  background: linear-gradient(135deg, #e0f7fa, #ffffff);
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 520px;
+  margin: 0 auto 48px;
+  padding: clamp(2rem, 4vw, 3rem);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(21, 101, 192, 0.15);
+  border: 1px solid rgba(21, 101, 192, 0.2);
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  z-index: 1;
+  cursor: default;
+  will-change: transform, box-shadow;
 }
 
-.SearchBox h3 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.search-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(21, 101, 192, 0.3);
+  border-color: rgba(21, 101, 192, 0.4);
+}
+
+.search-title {
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  font-weight: 800;
   color: #0d47a1;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  user-select: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  line-height: 1.15;
 }
 
-.SearchBox h5 {
-  font-size: 16px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  color: #333;
+.search-subtitle {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-weight: 500;
+  color: #37474f;
+  margin-bottom: 2.5rem;
+  user-select: none;
 }
 
-.SearchBox form {
+.search-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(1.2rem, 3vw, 1.8rem);
+  width: 100%;
+  z-index: 1;
 }
 
 .MuiTextField-root {
   width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.08);
+  transition: box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.MuiTextField-root:hover {
+  box-shadow: 0 8px 28px rgba(21, 101, 192, 0.15);
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 16px;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #0d47a1;
+  box-shadow: 0 0 0 3px rgba(21, 101, 192, 0.25);
 }
 
 .MuiButton-root {
   width: 100%;
+  padding: 0.9rem 1.2rem;
   background-color: #1565c0;
-  font-weight: 600;
-  padding: 10px 0;
-  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 16px;
   text-transform: capitalize;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(21, 101, 192, 0.2);
+  z-index: 1;
+  cursor: pointer;
 }
 
 .MuiButton-root:hover {
   background-color: #0d47a1;
+  transform: scale(1.05);
+  box-shadow: 0 12px 36px rgba(13, 71, 161, 0.35);
+}
+
+.MuiButton-root:focus-visible {
+  outline: 3px solid rgba(21, 101, 192, 0.35);
+  outline-offset: 2px;
+}
+
+.welcome-message-inline {
+  margin-top: 1.6rem;
+  font-size: 1rem;
+  color: #37474f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 1;
+}
+
+.weather-icon {
+  font-size: 2.6rem;
+  color: #1565c0;
+}
+
+@media (max-width: 768px) {
+  .search-box {
+    padding: 2rem 2rem;
+    max-width: 95%;
+  }
+
+  .search-title {
+    font-size: 1.6rem;
+  }
+
+  .search-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .MuiButton-root {
+    font-size: 1rem;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-box {
+    padding: 1.5rem 1.2rem;
+    border-radius: 20px;
+    margin-bottom: 36px;
+  }
+
+  .search-title {
+    font-size: 1.4rem;
+  }
+
+  .search-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .MuiButton-root {
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    border-radius: 14px;
+  }
 }

@@ -1,10 +1,15 @@
 :root {
-  --primary-color: #0d47a1;
-  --accent-color: #1565c0;
-  --bg-light: #f5f7fa;
-  --text-dark: #1e1e1e;
+  --primary-color: #0051a8;
+  --accent-color: #007aff;
+  --bg-light: #f0f4ff;
+  --text-dark: #1a1a1a;
   --text-muted: #555;
-  --border-radius: 12px;
+  --border-radius: 18px;
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.35s ease;
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -13,26 +18,87 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-light);
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #d0eaff, #f8fbff);
   color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  transition: background-color var(--transition-slow), color var(--transition-slow);
+  overflow-x: hidden;
 }
 
 a {
   color: var(--accent-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
   color: var(--primary-color);
+  text-decoration: underline;
 }
 
 button {
   font-family: inherit;
   cursor: pointer;
-  transition: all 0.3s ease;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.15);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.03);
+}
+
+input,
+textarea {
+  font-family: inherit;
+  border-radius: var(--border-radius);
+  border: 1px solid #ddd;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+::selection {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 85%;
+  }
+
+  button {
+    width: 100%;
+  }
 }

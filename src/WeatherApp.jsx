@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Searchbox from "./SearchBox";
-import InfoBox from "./InfoBox";
+import SearchBox from './SearchBox';
+import InfoBox from './InfoBox';
 import './WeatherApp.css';
 
 export default function WeatherApp() {
@@ -8,43 +8,38 @@ export default function WeatherApp() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  return (
-    <div className="weather-app-wrapper">
-      <div className="weather-app-container">
-        <h1 className="app-title">🌤️ Weather Forecast</h1>
+  const handleResult = (data) => {
+    setWeatherData(data);
+    setError(null);
+  };
 
-        <Searchbox 
-          onResult={(data) => {
-            setWeatherData(data);
-            setError(null);
-          }}
+  return (
+    <section className="weather-app-wrapper">
+      <div className="weather-app-container">
+        <h1 className="app-title">🌤️ Klimatic</h1>
+
+        <SearchBox
+          onResult={handleResult}
           onLoading={setLoading}
           onError={setError}
         />
 
         {loading && (
-          <div className="status-message loading-indicator">
-            Fetching weather data...
+          <div className="status-message loading">
+            🔄 Fetching weather data...
           </div>
         )}
 
         {error && (
-          <div className="status-message error-message">
-            ❌ Error: {error}
+          <div className="status-message error">
+            ❌ {error}
           </div>
         )}
 
-        {weatherData && !loading && (
-          <InfoBox Result={weatherData} />
-        )}
-
-        {!weatherData && !loading && !error && (
-          <div className="welcome-message">
-            <p>Enter a city to get started</p>
-            <div className="weather-icon">⛅</div>
-          </div>
+        {!loading && weatherData && (
+          <InfoBox result={weatherData} />
         )}
       </div>
-    </div>
+    </section>
   );
 }
